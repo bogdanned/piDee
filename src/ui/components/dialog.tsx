@@ -19,9 +19,8 @@ const ModifiedDialog = withStyles({
     alignItems: 'top',
     justifyContent: 'center',
     padding: '0%',
-    height: '100%',
-    width: '100%',
-
+    height: '280px',
+    width: '280px',
   },
 })(Dialog)
 
@@ -35,7 +34,7 @@ export const LoginDialog: React.SFC<Props> = props => {
     onEscapeKeyDown={props.onClose}
     onBackdropClick={props.onClose}
     open={props.open}>
-      <DialogTitle> {title} </DialogTitle>
+      {/*<DialogTitle> {title} </DialogTitle>*/}
       <span> {text} </span>
       {isJolocom ? <img src={props.qrCode} width={'100%'}/> : null}
     </ModifiedDialog>
