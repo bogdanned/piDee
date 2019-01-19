@@ -63,3 +63,6 @@ typings/
 # distribution folder
 dist/
 app.bundle.js
+
+#db temp
+dump.rdb

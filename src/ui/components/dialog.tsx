@@ -11,6 +11,9 @@ interface Props {
 
 const ModifiedDialog = withStyles({
   paper: {
+    maxHeight: "100%",
+    margin: "0px",
+    maxWidth: "100%",
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'top',
