@@ -1,0 +1,10 @@
+/**
+ * Replace the value with the credential request broadcasted by the demo service,
+ * can be found in the service logs, denoted as:
+ * '[DEBUG] : JWT for o1acb : [TOKEN]
+ */
+
+module.exports = {
+  token:
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJpbnRlcmFjdGlvblRva2VuIjp7ImNyZWRlbnRpYWxSZXF1aXJlbWVudHMiOlt7InR5cGUiOlsiQ3JlZGVudGlhbCIsIlByb29mT2ZOYW1lQ3JlZGVudGlhbCJdLCJjb25zdHJhaW50cyI6W119XSwiY2FsbGJhY2tVUkwiOiJodHRwOi8vMTkyLjE2OC4yLjEwMy9hdXRoZW50aWNhdGlvbi9vMWFjYiJ9LCJ0eXAiOiJjcmVkZW50aWFsUmVxdWVzdCIsImlhdCI6MTU0MjQ3MzkzMDY5MSwiZXhwIjoxNTQyNDc3NTMwNjkxLCJpc3MiOiJkaWQ6am9sbzpiMmQ1ZDhkNmNjMTQwMDMzNDE5YjU0YTIzN2E1ZGI1MTcxMDQzOWY5ZjQ2MmQxZmM5OGY2OThlY2E3Y2U5Nzc3I2tleXMtMSIsImp0aSI6ImVjODJjNDUzYjQyNWIifQ.12b091d11c054a7c6afbce941b58d4a5592afccf649a61735bbed1c8e68b217a4b030a1a90ca013013b115090cb5f9bf78a0d367026d961d1a286f11b06bffd2'
+}
