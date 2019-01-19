@@ -11,7 +11,7 @@ export const CustomInput: React.SFC<Props> = props => {
     <MuiThemeProvider
       theme={createMuiTheme({
         palette: {
-          primary: { main: '#fff' },
+          primary: { main: '#2E5BFF' },
           text: { primary: '#fff' }
         }
       })}

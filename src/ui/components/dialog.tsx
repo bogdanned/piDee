@@ -21,6 +21,8 @@ const ModifiedDialog = withStyles({
     padding: '0%',
     height: '280px',
     width: '280px',
+    position: 'absolute',
+    left: '0px'
   },
 })(Dialog)
 

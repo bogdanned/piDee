@@ -18,19 +18,18 @@ export class LandingComponent extends React.Component<Props, State> {
     return {
       pageBackground: {
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: 'left',
+        justifyContent: 'left',
         height: '100vh',
-        backgroundImage: 'url("/img/SSO_bg.jpg")',
+        /*backgroundImage: 'url("/img/SSO_bg.jpg")',*/
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'
       } as React.CSSProperties,
       loginOptionsContainer: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-
+        alignItems: 'left',
+        justifyContent: 'left',
         maxWidth: '600px',
         maxHeight: '500px',
         width: '40vw',
@@ -52,7 +51,7 @@ export class LandingComponent extends React.Component<Props, State> {
     return (
       <div style={pageBackground}>
         <div style={loginOptionsContainer}>
-          <div style={titleText}> Open your app  </div>
+          <div style={titleText}> Car Unlock </div>
           {/* <AbstractedButton
             color={'secondary'}
             text={'Continue with LinkedIn'}
@@ -67,7 +66,7 @@ export class LandingComponent extends React.Component<Props, State> {
           /> */}
           {/* <div style={{ color: 'grey' }}> or </div> */}
           <AbstractedButton
-            text={'Legitimate with Jolocom'}
+            text={'Unlock'}
             imageName={'JO_icon.svg'}
             color={'primary'}
             onClick={() => this.props.initiateLogin(loginProviders.jolocom)}
@@ -97,12 +96,9 @@ export const AbstractedButton: React.SFC<ButtonProps> = props => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '70%',
-    height: '10%',
-    marginTop: '20px',
-    marginBottom: '20px',
-    marginRight: 'auto',
-    marginLeft: 'auto'
+    width: '200px',
+    height: '50px',
+    margin: '5px'
   }
 
   const { color, onClick, imageName, text } = props
