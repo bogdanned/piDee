@@ -15,9 +15,9 @@ const ModifiedDialog = withStyles({
     flexDirection: 'column',
     alignItems: 'top',
     justifyContent: 'center',
-    padding: '1%',
-    height: '300px',
-    width: '270px',
+    padding: '0%',
+    height: '100%',
+    width: '100%',
 
   },
 })(Dialog)
