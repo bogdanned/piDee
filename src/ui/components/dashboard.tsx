@@ -43,13 +43,8 @@ export const DashboardComponent: React.SFC<Props> = props => {
   return (
     <div style={container}>
       <span style={welcomeMsg}>Welcome, {name}.</span>
-      <div>
-        <div>Q: Do you think we can handle the responsibility of managing our own data?</div>
-        <div style={responseArea}>
-          <div style={{ flex: 0.05 }}>A:</div>
-          <CustomInput value={inputValue} handleInput={handleUserInput} />
-        </div>
-      </div>
+      <span>Your Vehicle is ready:</span>
+      <span>km: 0</span><span>time: 00:00</span><span>Money: 0</span>
       <div style={button}>
         <AbstractedButton text="Receive" onClick={handleButtonClick} color={'primary'} />
       </div>

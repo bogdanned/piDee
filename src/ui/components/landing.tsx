@@ -16,6 +16,17 @@ interface State {}
 export class LandingComponent extends React.Component<Props, State> {
   getStyles() {
     return {
+      icon: {
+        backgroundImage: 'url("/img/locked.svg")',
+        width: '40px',
+        height: '40px'
+      },
+      smallContainer: {
+        display: "flex",
+        alignItems: 'center',
+        justifyContent: "center",
+        width: "300px"
+      },
       pageBackground: {
         display: 'flex',
         alignItems: 'left',
@@ -40,18 +51,30 @@ export class LandingComponent extends React.Component<Props, State> {
         backgroundColor: 'white'
       } as React.CSSProperties,
       titleText: {
-        fontSize: '30px',
-        fontWeight: 300
+        fontSize: '20px',
+        fontWeight: 300,
+        color: '#8097B1'
       }
     }
   }
 
   render() {
-    const { titleText, loginOptionsContainer, pageBackground } = this.getStyles()
+    const { titleText, loginOptionsContainer, pageBackground, icon, smallContainer } = this.getStyles()
     return (
       <div style={pageBackground}>
         <div style={loginOptionsContainer}>
-          <div style={titleText}> Car Unlock </div>
+          <div style={{...smallContainer, "flexDirection": "column"}}>
+            <div style={icon}></div>
+            <div style={titleText}> BMW 13  </div>
+            <div style={titleText}> Status: Available  </div>
+            <div style={titleText}></div>
+            <div style={titleText}> Verification of the driver license </div>
+            <div style={titleText}> needed.</div>
+            <div>
+              <img src={this.props.qrCode} width={'100%'}/>
+            </div>
+          </div>
+
           {/* <AbstractedButton
             color={'secondary'}
             text={'Continue with LinkedIn'}
@@ -72,12 +95,12 @@ export class LandingComponent extends React.Component<Props, State> {
             onClick={() => this.props.initiateLogin(loginProviders.jolocom)}
           />
         </div>
-        <LoginDialog
+        {/* <LoginDialog
           open={this.props.selectedLoginProvider !== loginProviders.none}
           provider={this.props.selectedLoginProvider}
           qrCode={this.props.qrCode}
           onClose={() => this.props.initiateLogin(loginProviders.none)}
-        /> 
+        />  */}
       </div>
     )
   }
