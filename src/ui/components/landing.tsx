@@ -26,7 +26,8 @@ export class LandingComponent extends React.Component<Props, State> {
         alignItems: 'center',
         justifyContent: "center",
         width: "300px",
-        height: "170px"
+        height: "170px",
+        marginTop: "20px"
       },
       pageBackground: {
         display: 'flex',
@@ -76,7 +77,7 @@ export class LandingComponent extends React.Component<Props, State> {
               </div>
             }
 
-            <div style={{marginTop: "50px"}}>
+            <div style={{marginTop: "10px"}}>
               <img src={this.props.qrCode} width={'100%'} />
             </div>
           </div>
@@ -94,12 +95,22 @@ export class LandingComponent extends React.Component<Props, State> {
             onClick={() => this.props.initiateLogin(loginProviders.facebook)}
           /> */}
           {/* <div style={{ color: 'grey' }}> or </div> */}
-          <AbstractedButton
+          {!this.props.qrCode &&
+            <AbstractedButton
             text={'Unlock'}
             imageName={'JO_icon.svg'}
             color={'primary'}
             onClick={() => this.props.initiateLogin(loginProviders.jolocom)}
           />
+          }
+          {this.props.qrCode &&
+            <AbstractedButton
+            text={'Please Auth'}
+            imageName={'JO_icon.svg'}
+            color={'secondary'}
+            onClick={() => this.props.initiateLogin(loginProviders.jolocom)}
+          />}
+
         </div>
         {/* <LoginDialog
           open={this.props.selectedLoginProvider !== loginProviders.none}

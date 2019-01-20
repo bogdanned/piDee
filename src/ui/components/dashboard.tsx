@@ -34,20 +34,21 @@ const styles = {
   button: {
     marginBottom: '3%',
     width: '15%'
-  }
+  },
+  icon: {
+    backgroundImage: 'url("/img/unlocked.svg")',
+    width: '40px',
+    height: '40px'
+  },
 }
 export const DashboardComponent: React.SFC<Props> = props => {
-  const { container, responseArea, welcomeMsg, button } = styles
+  const { container, responseArea, welcomeMsg, button, icon } = styles
   const { name, inputValue, handleButtonClick, handleUserInput } = props
 
   return (
     <div style={container}>
       <span style={welcomeMsg}>Welcome, {name}.</span>
-      <span>Your Vehicle is ready:</span>
-      <span>km: 0</span><span>time: 00:00</span><span>Money: 0</span>
-      <div style={button}>
-        <AbstractedButton text="Receive" onClick={handleButtonClick} color={'primary'} />
-      </div>
+      <div style={icon}></div>
     </div>
   )
 }
