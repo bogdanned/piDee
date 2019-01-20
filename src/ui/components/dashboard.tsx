@@ -1,9 +1,8 @@
 import React from 'react'
 import { AbstractedButton } from './landing'
 import { CustomInput } from '../generic/CustomInput'
-// import Sound from 'react-sound'
+import Sound from 'react-sound'
 import pay from "./payment"
-
 
 interface Props {
   did: string
@@ -50,9 +49,15 @@ export const DashboardComponent: React.SFC<Props> = props => {
 
   return (
     <div style={container}>
+      <Sound {...props} 
+        url="sound.mp3"
+        playStatus={Sound.status.PLAYING}
+        playFromPosition={300 /* in milliseconds */}
+      />
+      <button style={{}} onClick={() => (pay(5))}> Pay Car </button>
+      <span></span>
       <div style={icon}></div>
       <span style={welcomeMsg}>Welcome, {name}!</span>
-      <button onClick={() => (pay(5))}> Pay Car: 5.67 IOTA</button>
     </div>
   )
 }
