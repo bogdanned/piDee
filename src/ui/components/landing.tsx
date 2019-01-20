@@ -38,9 +38,9 @@ export class LandingComponent extends React.Component<Props, State> {
       } as React.CSSProperties,
       loginOptionsContainer: {
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'left',
-        justifyContent: 'left',
+        justifyContent: 'space-between',
         maxWidth: '600px',
         maxHeight: '500px',
         width: '40vw',
@@ -66,10 +66,10 @@ export class LandingComponent extends React.Component<Props, State> {
           <div style={{...smallContainer, "flexDirection": "column"}}>
             <div style={icon}></div>
             <div style={titleText}> BMW 13  </div>
-            <div style={titleText}> Status: Available  </div>
+            <div style={titleText}> Status: <strong>Available </strong></div>
             <div style={titleText}></div>
-            <div style={titleText}> Verification of the driver license </div>
-            <div style={titleText}> needed.</div>
+            <div style={titleText}> Verification of the </div>
+            <div style={titleText}> driver license needed.</div>
             <div>
               <img src={this.props.qrCode} width={'100%'}/>
             </div>
@@ -120,8 +120,9 @@ export const AbstractedButton: React.SFC<ButtonProps> = props => {
     alignItems: 'center',
     justifyContent: 'center',
     width: '200px',
-    height: '50px',
-    margin: '5px'
+    height: '130px',
+    margin: '10px',
+    marginTop: '60px'
   }
 
   const { color, onClick, imageName, text } = props
