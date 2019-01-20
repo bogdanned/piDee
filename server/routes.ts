@@ -144,7 +144,7 @@ export const configureRoutes = async (app: Express, redisApi: RedisApi, iw: Iden
           },
           claim: {
             note:
-              'Thank you for your participation and contribution our ongoing efforts to make self sovereign identity a reality'
+              'Your car rental of BMW 123 was verified with the acording driving license. You will be charged 5.56 IOTAS.'
           },
           subject: keyIdToDid(credentialOfferResponse.issuer)
         },
