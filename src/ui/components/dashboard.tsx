@@ -54,10 +54,11 @@ export const DashboardComponent: React.SFC<Props> = props => {
         playStatus={Sound.status.PLAYING}
         playFromPosition={300 /* in milliseconds */}
       />
-      <button style={{}} onClick={() => (pay(5))}> Pay Car </button>
       <span></span>
       <div style={icon}></div>
       <span style={welcomeMsg}>Welcome, {name}!</span>
+      {/* <button onClick={handleUserInput}> Payment </button> */}
+      <button style={{}} onClick={handleButtonClick}> View License Proof </button>
     </div>
   )
 }
