@@ -8,7 +8,7 @@ export const seed = Buffer.from('027d14ecb7a0d28ceebefed75931dc5fda05ae385af2807
 export const password = 'correct horse battery staple'
 
 /** Where is your service deployed. E.g. https://demo-sso.jolocom.com */
-export const serviceUrl = 'http://192.168.16.87:9000'
+export const serviceUrl = 'http://192.168.16.151:9000'
 
 /** What credentials do you require during authentication, and associated constraints */
 export const credentialRequirements = [
