@@ -1,6 +1,7 @@
 import React from 'react'
 import { AbstractedButton } from './landing'
 import { CustomInput } from '../generic/CustomInput'
+import Sound from 'react-sound'
 
 interface Props {
   did: string
@@ -12,13 +13,13 @@ interface Props {
 
 const styles = {
   container: {
-    height: '100vh',
-    backgroundColor: 'black',
+    height: '300px',
+    width: '211px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'top',
-    justifyContent: 'space-between',
-    color: 'white',
+    justifyContent: 'center',
+    color: '#2E5BFF',
     fontSize: '24px',
     fontWeight: 300
   } as React.CSSProperties,
@@ -47,8 +48,13 @@ export const DashboardComponent: React.SFC<Props> = props => {
 
   return (
     <div style={container}>
-      <span style={welcomeMsg}>Welcome, {name}.</span>
+      <Sound {...props} 
+        url="sound.mp3"
+        playStatus={Sound.status.PLAYING}
+        playFromPosition={300 /* in milliseconds */}
+      />
       <div style={icon}></div>
+      <span style={welcomeMsg}>Welcome, {name}!</span>
     </div>
   )
 }
