@@ -10,7 +10,7 @@ interface Props {
   qrCode: string
 }
 
-interface State {}
+interface State { }
 
 // TODO Abstract?
 export class LandingComponent extends React.Component<Props, State> {
@@ -25,7 +25,8 @@ export class LandingComponent extends React.Component<Props, State> {
         display: "flex",
         alignItems: 'center',
         justifyContent: "center",
-        width: "300px"
+        width: "300px",
+        height: "170px"
       },
       pageBackground: {
         display: 'flex',
@@ -63,15 +64,20 @@ export class LandingComponent extends React.Component<Props, State> {
     return (
       <div style={pageBackground}>
         <div style={loginOptionsContainer}>
-          <div style={{...smallContainer, "flexDirection": "column"}}>
-            <div style={icon}></div>
-            <div style={titleText}> BMW 13  </div>
-            <div style={titleText}> Status: <strong>Available </strong></div>
-            <div style={titleText}></div>
-            <div style={titleText}> Verification of the </div>
-            <div style={titleText}> driver license needed.</div>
-            <div>
-              <img src={this.props.qrCode} width={'100%'}/>
+          <div style={{ ...smallContainer, "flexDirection": "column" }}>
+            {!this.props.qrCode &&
+              <div>
+                <div style={icon}></div>
+                <div style={titleText}> BMW 13  </div>
+                <div style={titleText}> Status: <strong>Available </strong></div>
+                <div style={titleText}></div>
+                <div style={titleText}> Verification of the </div>
+                <div style={titleText}> driver license needed.</div>
+              </div>
+            }
+
+            <div style={{marginTop: "50px"}}>
+              <img src={this.props.qrCode} width={'100%'} />
             </div>
           </div>
 
@@ -121,14 +127,13 @@ export const AbstractedButton: React.SFC<ButtonProps> = props => {
     justifyContent: 'center',
     width: '200px',
     height: '130px',
-    margin: '10px',
-    marginTop: '60px'
+    margin: '10px'
   }
 
   const { color, onClick, imageName, text } = props
   return (
     <Button style={buttonStyle} variant="contained" color={color} onClick={onClick}>
-      <img height={16} style={{marginRight: '5%'}} src={`/img/${imageName}`} />
+      <img height={16} style={{ marginRight: '5%' }} src={`/img/${imageName}`} />
       {text}
     </Button>
   )
