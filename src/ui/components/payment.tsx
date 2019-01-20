@@ -8,7 +8,7 @@ export default async function pay(amount: any){
             'accept': '*/*',
             'Authorization': 'KLCTTSWE9EJPL9ZAVXAPBYW9SQSHMMTIKIWGZCG9SE9ITWXKAZLAVV9GZKZZLGI9DVOMCHNWC9XDTXZKN',
             'Originator-Ref': 'DDUSYCTGGMJXAKFTQDW9EMWSYMOAIIGKLQEMGPTPYJXIKOOHDCOEMHROAZHYSOVANVILCGIXXIMFNOYUY',
-            'contentType': 'application/json',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
             "amount": amount, 
@@ -17,7 +17,7 @@ export default async function pay(amount: any){
     })
 
     const data = await response.json()
-
+    console.log(data, "data")
     return data
     
 }

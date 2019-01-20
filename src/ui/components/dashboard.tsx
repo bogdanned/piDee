@@ -4,6 +4,7 @@ import { CustomInput } from '../generic/CustomInput'
 // import Sound from 'react-sound'
 import pay from "./payment"
 
+
 interface Props {
   did: string
   name: string
@@ -49,9 +50,9 @@ export const DashboardComponent: React.SFC<Props> = props => {
 
   return (
     <div style={container}>
-      <button onClick={() => (pay(5))}> Pay Car </button>
       <div style={icon}></div>
       <span style={welcomeMsg}>Welcome, {name}!</span>
+      <button onClick={() => (pay(5))}> Pay Car: 5.67 IOTA</button>
     </div>
   )
 }

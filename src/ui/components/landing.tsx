@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button'
 import { PropTypes } from '@material-ui/core'
 import { loginProviders } from '../../reducers'
 import { LoginDialog } from './dialog'
-import pay from "./payment"
 
 interface Props {
   initiateLogin: (name: loginProviders) => void
@@ -111,7 +110,6 @@ export class LandingComponent extends React.Component<Props, State> {
             color={'secondary'}
             onClick={() => this.props.initiateLogin(loginProviders.jolocom)}
           />}
-      <button onClick={() => (pay(5))}> Pay Car </button>
 
         </div>
         {/* <LoginDialog
