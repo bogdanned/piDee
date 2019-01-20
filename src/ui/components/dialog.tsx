@@ -11,6 +11,7 @@ interface Props {
 
 const ModifiedDialog = withStyles({
   paper: {
+    top: "0px",
     maxHeight: "100%",
     margin: "0px",
     maxWidth: "100%",
@@ -19,8 +20,8 @@ const ModifiedDialog = withStyles({
     alignItems: 'top',
     justifyContent: 'center',
     padding: '0%',
-    height: '280px',
-    width: '280px',
+    height: '250px',
+    width: '250px',
     position: 'absolute',
     left: '0px'
   },
