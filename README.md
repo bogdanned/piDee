@@ -14,23 +14,74 @@ The Id consist of an android app and services.
 # Controiller
 ## Hardware
 - Raspberry Pi 3
-- Quinat 3.5" display connected to GPIO 
-## OS
-- Ubuntu Mate
-- chromium browser 
+- Quinat 3.5" display connected to GPIO
+- connect display to Raspberry pi socket
+- connect 5V power supply, keyboard and mouse to pi 
 
-## Challenges
-The app uses react framework and therefore a up to date browser is required.
-OS Raspbian can handle the small display quite good but chromium is to old :-( and not upgradable
-OS Ubuntu mate works with up to data chromium V71 and ubuntu 16.04
-Full screen and kiosk modus do not work properly. 
-chromium has to be started with option no-sandbox
+## Installation
+### OS Installation
+react framework requires chromium version 65 and therefore rasersion 9 stretch 
+Download Raspbian strech based on Ubuntu 16.04 https://www.raspberrypi.org/downloads/raspbian/
+choose Raspbian Stretch with desktop and recommended software
+identify SD card slot  and burn SD card
 ```sh
-$ sudo chromium-browser --no-sandbox
+$ lsblk
+$ sudo dd of=/dev/mmcblk0 if=raspbi.img bs=1M count=8000
 ```
+insert SD-  card into Pi
+connect raspberry to Internet 
+- by ethernet cable or 
+- connect monitor to HDMI socket and configure W-LAN
 
+open ssh connection to raspberry to download display drivers
+```sh
+$ ssh  pi@192.168.178.41
+```
+at promt pi@raspberrypi:~ $ run:
+```sh
+$ sudo rm -rf LCD-show
+$ git clone https://github.com/goodtft/LCD-show.git
+$ chmod -R 755 LCD-show
+$ cd LCD-show/cd 
+$ sudo ./LCD35-show
+```
+after reboot the LCD display is visible
+chromium version should be 65 or higher
+```sh
+$ chromium-browser -version
+```
+increase size of SD card to 16 GB, e.g. with gparted
 
-# Application
-Application can be installed and compiled according https://jolocom-lib.readthedocs.io/en/latest/ssoSetUp.html
+### Application Installation
+Application is based on https://jolocom-lib.readthedocs.io/en/latest/ssoSetUp.html
+Database has to be installed first
+```sh
+$ # database installation
+$  sudo apt-get update
+$  sudo apt-get install redis-server
+$ # database start
+$ redis-server
+ Warning: no config file specified, using the default config. In order to specify a config file use 'redis-server /path/to/redis.conf'
+ Server started, Redis version 2.2.12
+ The server is now ready to accept connections on port 6379
+... more logs ...
+$ redis-cli ping
+PONG
+$
+```
+```sh
+$ git clone  https://github.com/bogdanned/piDee; cd piDee/
+$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+$ yarn install
+```
+All sofware is available now.
+compiling of application can be started from piDee folder
+
+```sh
+$ Yarn start
+```
 Compiling takes several minutes.
+
+
 
