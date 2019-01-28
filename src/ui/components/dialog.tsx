@@ -20,8 +20,8 @@ const ModifiedDialog = withStyles({
     alignItems: 'top',
     justifyContent: 'center',
     padding: '0%',
-    height: '250px',
-    width: '250px',
+    height: '320px',
+    width: '320px',
     position: 'absolute',
     left: '0px'
   },

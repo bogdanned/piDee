@@ -24,10 +24,10 @@ export class LandingComponent extends React.Component<Props, State> {
       smallContainer: {
         display: "flex",
         alignItems: 'center',
-        justifyContent: "center",
-        width: "300px",
-        height: "170px",
-        marginTop: "20px"
+        //justifyContent: "center",
+        //width: "400px",
+        //height: "170px",
+        //marginTop: "20px"
       },
       pageBackground: {
         display: 'flex',
@@ -43,14 +43,16 @@ export class LandingComponent extends React.Component<Props, State> {
         flexDirection: 'row',
         alignItems: 'left',
         justifyContent: 'space-between',
-        maxWidth: '600px',
-        maxHeight: '500px',
-        width: '40vw',
-        height: '40vh',
-        minWidth: '400px',
-        minHeight: '300px',
+        //maxWidth: '600px',
+        //maxHeight: '500px',
+        //width: '40vw',
+        //height: '40vh',
+        //minWidth: '400px',
+        //minHeight: '300px',
         borderRadius: '5px',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        width: '100%',
+        padding: '10px',
       } as React.CSSProperties,
       titleText: {
         fontSize: '20px',
@@ -65,12 +67,17 @@ export class LandingComponent extends React.Component<Props, State> {
     return (
       <div style={pageBackground}>
         <div style={loginOptionsContainer}>
-          <div style={{ ...smallContainer, "flexDirection": "column" }}>
+          <div style={{ ...smallContainer}}>
             {!this.props.qrCode &&
               <div>
-                <div style={icon}></div>
+                <h1> Car Rental Service </h1> 
+                <div style={titleText}> <strong>with Self Sovereign Identity App</strong></div>
+                <hr></hr>
+                <div style={titleText}> .  </div>
                 <div style={titleText}> BMW 13  </div>
                 <div style={titleText}> Status: <strong>Available </strong></div>
+                <div style={icon}></div>
+
                 <div style={titleText}></div>
                 <div style={titleText}> Verification of the </div>
                 <div style={titleText}> driver license needed.</div>
@@ -78,7 +85,7 @@ export class LandingComponent extends React.Component<Props, State> {
             }
 
             <div style={{marginTop: "10px"}}>
-              <img src={this.props.qrCode} width={'100%'} />
+              <img src={this.props.qrCode} width={'300px'} />
             </div>
           </div>
 
@@ -96,20 +103,23 @@ export class LandingComponent extends React.Component<Props, State> {
           /> */}
           {/* <div style={{ color: 'grey' }}> or </div> */}
           {!this.props.qrCode &&
-            <AbstractedButton
-            text={'Unlock'}
-            imageName={'JO_icon.svg'}
-            color={'primary'}
-            onClick={() => this.props.initiateLogin(loginProviders.jolocom)}
-          />
+              <AbstractedButton
+              text={'Unlock Car'}
+              imageName={'JO_icon.svg'}
+              color={'primary'}
+              onClick={() => this.props.initiateLogin(loginProviders.jolocom)}
+              />
           }
           {this.props.qrCode &&
-            <AbstractedButton
-            text={'Please Auth'}
-            imageName={'JO_icon.svg'}
-            color={'secondary'}
-            onClick={() => this.props.initiateLogin(loginProviders.jolocom)}
-          />}
+            <div style={{position: 'relative', top: '1%'}}>
+              <AbstractedButton
+              text={'Please Auth'}
+              imageName={'JO_icon.svg'}
+              color={'secondary'}
+              onClick={() => this.props.initiateLogin(loginProviders.jolocom)}
+              />
+            </div>
+          }
 
         </div>
         {/* <LoginDialog
@@ -136,9 +146,11 @@ export const AbstractedButton: React.SFC<ButtonProps> = props => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '200px',
-    height: '130px',
-    margin: '10px'
+    width: '120px',
+    //height: '130px',
+    margin: '10px',
+    //position: 'relative',
+    //top: '25%'
   }
 
   const { color, onClick, imageName, text } = props

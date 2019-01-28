@@ -15,14 +15,14 @@ interface Props {
 const styles = {
   container: {
     height: '300px',
-    width: '211px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'top',
     justifyContent: 'center',
     color: '#2E5BFF',
     fontSize: '24px',
-    fontWeight: 300
+    fontWeight: 300,
+    padding: '10px'
   } as React.CSSProperties,
   responseArea: {
     display: 'flex',
