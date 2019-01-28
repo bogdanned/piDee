@@ -1,13 +1,14 @@
 # piDee
 Self Sovereign Identity on Microcontroller (Raspberry Pi)
 
-Demo application for a board computer e.g. of a car to rent.
-running on raspberry pi
-using the Jolocom SSI application (https://github.com/jolocom/)
-adapting the Jolocom demo service 
+- demo application for a board computer e.g. of a car to rent.
+- running on raspberry pi
+- using the Jolocom SSI application (https://github.com/jolocom/)
+- adapting the Jolocom demo service 
 
 # Background
-The concept of self sovereign identity is an attractive identity that works totally de-centralized. This concept uses standardized digital IDs ( https://w3c-ccg.github.io/did-spec/ )
+The concept of self sovereign identity is an attractive identity that works totally de-centralized. 
+This concept uses standardized digital IDs ( https://w3c-ccg.github.io/did-spec/ )
 
 The Id consist of an android app and services.
 
@@ -20,7 +21,7 @@ The Id consist of an android app and services.
 
 ## Installation
 ### OS Installation
-react framework requires chromium version 65 and therefore rasersion 9 stretch 
+The used react framework requires chromium version 65 and therefore Raspbian version 9 stretch 
 Download Raspbian strech based on Ubuntu 16.04 https://www.raspberrypi.org/downloads/raspbian/
 choose Raspbian Stretch with desktop and recommended software
 identify SD card slot  and burn SD card
@@ -28,8 +29,8 @@ identify SD card slot  and burn SD card
 $ lsblk
 $ sudo dd of=/dev/mmcblk0 if=raspbi.img bs=1M count=8000
 ```
-insert SD-  card into Pi
-connect raspberry to Internet 
+insert SD-card into Pi
+connect Raspberry to Internet 
 - by ethernet cable or 
 - connect monitor to HDMI socket and configure W-LAN
 
@@ -61,11 +62,11 @@ $  sudo apt-get update
 $  sudo apt-get install redis-server
 $ # database start
 $ redis-server
- Warning: no config file specified, using the default config. In order to specify a config file use 'redis-server /path/to/redis.conf'
+ Warning: no config file specified, using the default config.
  Server started, Redis version 2.2.12
  The server is now ready to accept connections on port 6379
-... more logs ...
-$ redis-cli ping
+ ... more logs ...
+$ redis-cli p ing
 PONG
 $
 ```
@@ -76,12 +77,9 @@ $ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sour
 $ yarn install
 ```
 All sofware is available now.
-compiling of application can be started from piDee folder
+The compiling of application can be started from piDee folder
 
 ```sh
-$ Yarn start
+$ yarn start
 ```
 Compiling takes several minutes.
-
-
-
