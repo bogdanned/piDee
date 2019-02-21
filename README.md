@@ -66,7 +66,7 @@ $ redis-server
  Server started, Redis version 2.2.12
  The server is now ready to accept connections on port 6379
  ... more logs ...
-$ redis-cli p ing
+$ redis-cli ping
 PONG
 $
 ```
@@ -74,6 +74,8 @@ $
 $ git clone  https://github.com/bogdanned/piDee; cd piDee/
 $ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 $ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+$ sudo apt-get update
+$ sudo apt-get install yarn
 $ yarn install
 ```
 All sofware is available now.
