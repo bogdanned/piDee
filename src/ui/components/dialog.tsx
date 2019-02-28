@@ -23,7 +23,7 @@ const ModifiedDialog = withStyles({
     height: '320px',
     width: '320px',
     position: 'absolute',
-    left: '0px'
+    left: '70px'
   },
 })(Dialog)
 

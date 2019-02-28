@@ -155,9 +155,11 @@ export const AbstractedButton: React.SFC<ButtonProps> = props => {
 
   const { color, onClick, imageName, text } = props
   return (
+    
     <Button style={buttonStyle} variant="contained" color={color} onClick={onClick}>
       <img height={16} style={{ marginRight: '5%' }} src={`/img/${imageName}`} />
       {text}
     </Button>
+    
   )
 }

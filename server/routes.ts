@@ -39,6 +39,7 @@ export const configureRoutes = async (app: Express, redisApi: RedisApi, iw: Iden
 
       const jwtCR = credentialRequest.encode()
       res.send(jwtCR)
+      console.log('route: get /mobile/credentialRequest')
     } catch (err) {
       next(err)
     }
@@ -61,6 +62,7 @@ export const configureRoutes = async (app: Express, redisApi: RedisApi, iw: Iden
 
       const jwtCR = credentialOfferRequest.encode()
       res.send(jwtCR)
+      console.log('route: get /mobile/credentialOfferRequest')
     } catch (err) {
       next(err)
     }
@@ -92,6 +94,7 @@ export const configureRoutes = async (app: Express, redisApi: RedisApi, iw: Iden
       await setAsync(clientId, JSON.stringify({ status: 'success', data: userData }))
 
       res.json('OK')
+      console.log('route: get /authentication/:clientId --> ok')
     } catch (err) {
       next(err)
     }
@@ -113,6 +116,7 @@ export const configureRoutes = async (app: Express, redisApi: RedisApi, iw: Iden
       )
 
       res.json({ token: credOffer.encode() })
+      console.log('route: get /credentialOffer')
     } catch (err) {
       next(err)
     }
@@ -160,6 +164,8 @@ export const configureRoutes = async (app: Express, redisApi: RedisApi, iw: Iden
       )
 
       res.json({ token: credentialReceive.encode() })
+      console.log('route: post /credentialReceive')
+
     } catch (err) {
       next(err)
     }
